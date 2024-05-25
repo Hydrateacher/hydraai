@@ -220,28 +220,28 @@ def query(filename):
 
 
 
-#huggingfase  text to speech
-from transformers import AutoModel, AutoTokenizer
-import torch
+# #huggingfase  text to speech
+# from transformers import AutoModel, AutoTokenizer
+# import torch
 
 
 
-model = AutoModel.from_pretrained("facebook/mms-tts-uzb-script_cyrillic")
-tokenizer = AutoTokenizer.from_pretrained("facebook/mms-tts-uzb-script_cyrillic")
+# model = AutoModel.from_pretrained("facebook/mms-tts-uzb-script_cyrillic")
+# tokenizer = AutoTokenizer.from_pretrained("facebook/mms-tts-uzb-script_cyrillic")
 
-text = "some example text in the Uzbek language"
-inputs = tokenizer(text, return_tensors="pt")
+# text = "some example text in the Uzbek language"
+# inputs = tokenizer(text, return_tensors="pt")
 
-with torch.no_grad():
-    output = model(**inputs).waveform
+# with torch.no_grad():
+#     output = model(**inputs).waveform
 
-import scipy
+# import scipy
 
-scipy.io.wavfile.write("techno.wav", rate=model.config.sampling_rate, data=output)
+# scipy.io.wavfile.write("techno.wav", rate=model.config.sampling_rate, data=output)
 
-from IPython.display import Audio
+# from IPython.display import Audio
 
-Audio(output, rate=model.config.sampling_rate)
+# Audio(output, rate=model.config.sampling_rate)
 
 # textSpeech_API_URL = "https://api-inference.huggingface.co/models/facebook/mms-tts-uzb-script_cyrillic"
 # textSpeech_headers = {"Authorization": "Bearer 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"}
