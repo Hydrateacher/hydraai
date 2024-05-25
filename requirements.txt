@@ -2,3 +2,4 @@ Flask
 pillow
 requests
 transformers
+pymomgo
