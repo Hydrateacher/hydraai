@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask import session
-from pymongo import MongoClient
+# from pymongo import MongoClient
 import requests
 # MongoDB-ga bog'lanish
-client = MongoClient('mongodb://localhost:27017/')
-db = client['testdb']
-collection = db['user']
-users = collection.find()
+# client = MongoClient('mongodb://localhost:27017/')
+# db = client['testdb']
+# collection = db['user']
+# users = collection.find()
 
 
 
