@@ -195,27 +195,27 @@ image_bytes = query({
 	"inputs": "Astronaut riding a horse",
 })
 # You can access the image with PIL.Image for example
-import io
-from PIL import Image
-image = Image.open(io.BytesIO(image_bytes))
+# import io
+# from PIL import Image
+# image = Image.open(io.BytesIO(image_bytes))
 
-#huggingfase image to text
+# #huggingfase image to text
 
-imageText_API_URL = "https://api-inference.huggingface.co/models/nlpconnect/vit-gpt2-image-captioning"
-imageText_headers = {"Authorization": "Bearer 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"}
+# imageText_API_URL = "https://api-inference.huggingface.co/models/nlpconnect/vit-gpt2-image-captioning"
+# imageText_headers = {"Authorization": "Bearer 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"}
 
-@app.route('/imageText', methods=['GET', 'POST'])
-def imageText():
-    if request.method == 'POST':
-        # Handle POST request
-        pass
-    return render_template('imageText.html')
+# @app.route('/imageText', methods=['GET', 'POST'])
+# def imageText():
+#     if request.method == 'POST':
+#         # Handle POST request
+#         pass
+#     return render_template('imageText.html')
 
-def query(filename):
-    with open(filename, "rb") as f:
-        data = f.read()
-    response = requests.post(imageText_API_URL, headers=imageText_headers, data=data)
-    return response.json()
+# def query(filename):
+#     with open(filename, "rb") as f:
+#         data = f.read()
+#     response = requests.post(imageText_API_URL, headers=imageText_headers, data=data)
+#     return response.json()
 
 
 
